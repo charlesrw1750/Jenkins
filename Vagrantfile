@@ -3,6 +3,7 @@ Vagrant.configure("2") do |config|
     config.vm.hostname = "jenkins"
     config.vbguest.installer_options = { allow_kernel_upgrade: true }
     config.vm.network "forwarded_port", guest: 8080, host: 8080, hostip: '127.0.0.1'
+    config.vm.network "private_network", ip: "192.168.1.5"
     config.vm.provider "virtualbox" do |vb|
         vb.memory = "2048"
     end
